@@ -1,0 +1,14 @@
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  labels:
+    operators.openshift.org/catalog: "true"
+  name: operator-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - host2.ocp-poc-demo.com:8443/container-native-virtualization
+    source: registry.redhat.io/container-native-virtualization
+  - mirrors:
+    - host2.ocp-poc-demo.com:8443/odf4
+    source: registry.redhat.io/odf4
