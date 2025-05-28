@@ -6,8 +6,8 @@ metadata:
 spec:
   sourceType: grpc
   grpcPodConfig:
-    securityContextConfig: <security_mode> 
-  image: <registry>/<namespace>/redhat-operator-index:v4.18 
+    securityContextConfig: legacy
+  image: host2.ocp-poc-demo.com:8443/<namespace>/redhat-operator-index:v4.18 
   displayName: My Operator Catalog
   publisher: <publisher_name> 
   updateStrategy:
