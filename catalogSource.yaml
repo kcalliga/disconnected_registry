@@ -7,9 +7,7 @@ spec:
   sourceType: grpc
   grpcPodConfig:
     securityContextConfig: legacy
-  image: host2.ocp-poc-demo.com:8443/<namespace>/redhat-operator-index:v4.18 
-  displayName: My Operator Catalog
-  publisher: <publisher_name> 
+  image: host2.ocp-poc-demo.com:8443/redhat/redhat-operator-index:v4.18  
   updateStrategy:
     registryPoll: 
       interval: 30m
