@@ -1,0 +1,81 @@
+apiVersion: v1
+baseDomain: ocp-poc-demo.com
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  replicas: 0
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+metadata:
+  name: disconnected
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  machineNetwork:
+  - cidr: 192.168.4.0/24
+  networkType: OVNKubernetes
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  baremetal:
+    apiVIP: "10.49.252.105"
+    ingressVIP: "10.49.252.106"
+pullSecret: '{"auths":{"host2.ocp-poc-demo.com:8443":{"auth":"aW5pdDpPztrFNTRoMEM3b0g5WnUxR3Y4RtNJVldVTnpENlh5QQ=="}}}'
+sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDY4FFXOr3y52gyDVGeZvtf+Le3NLkllsGqJfKLWQOpHpL7AFlibK/YBlZMD5yT//ZVJ1g+AreSZpcbngvcVFdMhSL8eFSHGDAT1aZIRVdPnQ/3eNrLsLjldiR+HT191QEHl3DHY0ZyT37rl30CQ5xiUd7/5ZemiArypnxjelsaYIEnT5UcRDOAk3CDPbF8M0gNNwNAqKmRGNKcJmTgSSLjJGDblxNGMk5TIl21yxNZqJqDdQgj4s9cp0OM5ZPg1ZE9syKSqg/PkNcOZ5PVzFrOpVsVJTiSnTPlU5bmqbrwnH3ij2QdtSBh4fznchaY6z38uT8EBzXycuvaILLVVl2Qa/mITjujMVicnDYpilUeoDnd6/ZR6QZfKnCBz/T4MQ24wC2TlxXqtNSpaIbAOsNovbOvDmt5iDD1gsRGXfyrLjDAzUJKHOKWGkLbcolGjSemqzvfeDU/7iA90zUhGORmbawQcQeRHEwzIXzpL+Sby3ntrx4a/KI5STw9rCTAsPE= keith@host3.ocp-poc-demo.com'
+additionalTrustBundle: |
+  -----BEGIN CERTIFICATE-----
+  MIIDcTCCAlmgAwIBAgIUDOyG3KLLwQsVkSahzbuaHFEZxU4wDQYJKoZIhvcNAQEL
+  BQAweTELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAlZBMREwDwYDVQQHDAhOZXcgWW9y
+  azENMAsGA1UECgwEUXVheTERMA8GA1UECwwIRGl2aXNpb24xKDAmBgNVBAMMH3Rl
+  c3R2bS1kbnZyLnZvaXAuY2hhcnRlcmxhYi5jb20wHhcNMjUwNTE2MjAyNzEyWhcN
+  MjYwNTA3MjAyNzEyWjAaMRgwFgYDVQQDDA9xdWF5LWVudGVycHJpc2UwggEiMA0G
+  CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDN0HPGI7rR6DuvcfFzOzA45AHjoKDY
+  kfiSCRzVRtm8SwA3ckORMkaGtTcPne9xPBoWZGBSBwRIzc2sLuwaMVs7cqavSHeo
+  x8jYdUG1esnSdyfAOvLN/+gjvH9f6b6S6fCE+RWoI0YoMg8CNV3kOLOh46XDHWuM
+  eVSz2n2b5Ni/zufZO6S9ht/QR0VBn4J0DSnrRtc4jvi/1AM8+YFRF7e1n0jqTGyv
+  u/cXn9kisbvH9ouZ/0weX7uz4E00VLRiX4a5RZlpNzSlwb6BRINh2HwE1bCUx35p
+  QWhZpiE7A9xMlHs6jfXHTMIRW9+AgxXL6PzBubqWIngk5U7+8yU+n5avAgMBAAGj
+  UDBOMAsGA1UdDwQEAwIC5DATBgNVHSUEDDAKBggrBgEFBQcDATAqBgNVHREEIzAh
+  gh90ZXN0dm0tZG52ci52b2lwLmNoYXJ0ZXJsYWIuY29tMA0GCSqGSIb3DQEBCwUA
+  A4IBAQAT/WKxvtn59MnaO7nz+kfWrekPmr8W0vJiC04b3goWfnhdjGW/NXCuutio
+  K8ESyazUfTaWYLHkbq/Yx+A3I/7T5aA9rFPkXhIE4KRWGmFciMXPfmKvCBhsLhrx
+  toL7WD5dthrLJbeRlzaG0zXwf2IAa3pzx72SBdBh81cW6UY88O6DwlIVN66tMpIk
+  P2FWUoZ22pHCKMkNSh8y1xfL3ddP0OhlcsobS000E4vgXxeGrFEKkyuYpP8TsPzZ
+  SdlJwXWIl3vhpmLdFiNXd5Td81/UYbh62t/A9ZzS1lY55cGY7C6BvN32RUjkM2Z/
+  BCmhQXTqg5ar6O/nct2VXKIuvtMl
+  -----END CERTIFICATE-----
+  -----BEGIN CERTIFICATE-----
+  MIID5DCCAsygAwIBAgIUMy2WGoXqDOQbrKb8it7Vyi7D0iMwDQYJKoZIhvcNAQEL
+  BQAweTELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAlZBMREwDwYDVQQHDAhOZXcgWW9y
+  azENMAsGA1UECgwEUXVheTERMA8GA1UECwwIRGl2aXNpb24xKDAmBgNVBAMMH3Rl
+  c3R2bS1kbnZyLnZvaXAuY2hhcnRlcmxhYi5jb20wHhcNMjUwNTE2MjAyNzEwWhcN
+  MjgwMzA1MjAyNzEwWjB5MQswCQYDVQQGEwJVUzELMAkGA1UECAwCVkExETAPBgNV
+  BAcMCE5ldyBZb3JrMQ0wCwYDVQQKDARRdWF5MREwDwYDVQQLDAhEaXZpc2lvbjEo
+  MCYGA1UEAwwfdGVzdHZtLWRudnIudm9pcC5jaGFydGVybGFiLmNvbTCCASIwDQYJ
+  KoZIhvcNAQEBBQADggEPADCCAQoCggEBAKSWa+ySDNORb7UprChr1nT8WxcEdyK6
+  gkvwZ2TBhU/rqDqZLMqyIvtFn57xgHpOhseyCnOVAN7BRJDx09xZR9o/O9oqFu2B
+  sZgcTEI8Rc3/gH8AnTaXVISr1XXOwDiS7ILRlaT+TsCVim59qJ1H1KNEk5kDROJr
+  Ol/1wx7cnNcKFQgwKzf6LgfLYcAdOxLMvl9CBVxSATpvyf2C6CnimhaNYDbpXmKp
+  PLaWIvRwpnd4ZsjpVbECH6s9K8MAQ47YGvkbnVlDOYStUUA4qhoXuxueFZk/Sp+K
+  ugR0uNtdaf79u0Kd0yInTMrAOQPpUKNJ2LX/fdGH6xA3TDnNpQgcL/sCAwEAAaNk
+  MGIwCwYDVR0PBAQDAgLkMBMGA1UdJQQMMAoGCCsGAQUFBwMBMCoGA1UdEQQjMCGC
+  H3Rlc3R2bS1kbnZyLnZvaXAuY2hhcnRlcmxhYi5jb20wEgYDVR0TAQH/BAgwBgEB
+  /wIBATANBgkqhkiG9w0BAQsFAAOCAQEAKkUirlO+agjwL1c4DOv/ulYu6CdQQ4tM
+  +sK2cftREQsLG+85++8/hXOmUmuWmR+NfOVLSumwJXw8Hn4/HK7oBU3uQdIOsEYl
+  tcUH9tcGXfHvnnGKSTmCTVpZ99wvWMfvpLvnBu5G6x/bXQ3KUza7GdjpVorI3RHW
+  K9hVL/buFgplU5reJRXndxXRw0+Q2O5dNn0UsClUklrabDlEBPjiXKYeoiTdRfMl
+  x7pU+hO0L9JYdcN6XfGSB/CbXhugXajPaYAf8wcqSCEZWzsL14cBznKRDbYfk2sZ
+  8m2IwgGdLbR9dBjxaquNVWm/0daqMIG4+paN0RLJKhY0jxt88BKKqQ==
+  -----END CERTIFICATE-----
+imageDigestSources:
+- mirrors:
+  - host2.ocp-poc-demo.com:8443/ocp/openshift/release
+  source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+- mirrors:
+  - host2.ocp-poc-demo.com:8443/ocp/openshift/release-images
+  source: quay.io/openshift-release-dev/ocp-release
