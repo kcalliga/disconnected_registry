@@ -1,0 +1,108 @@
+apiVersion: v1beta1
+kind: AgentConfig
+metadata:
+  name: cluster-agent-config
+rendezvousIP: 192.168.4.200
+hosts:
+
+  - hostname: host1
+    interfaces:
+      - name: eth0
+        macAddress: 52:54:00:bc:e6:73
+    networkConfig:
+      interfaces:
+        - name: eth0
+          type: ethernet
+          state: up
+          mtu: 1500
+          ipv4:
+            enabled: true
+            dhcp: false
+            address:
+              - ip: 192.168.4.200
+                prefix-length: 24
+          ipv6:
+            enabled: false
+            dhcp: false
+            autoconf: false
+      dns-resolver:
+        config:
+          search:
+            - disconnected.ocp-poc-demo.com
+          server:
+            - 8.8.8.8
+            - 8.8.4.4
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.4.1
+            next-hop-interface: eth0
+            table-id: 254
+
+  - hostname: host3
+    interfaces:
+      - name: eth0
+        macAddress: 52:54:00:6d:62:9b
+    networkConfig:
+      interfaces:
+        - name: eth0
+          type: ethernet
+          state: up
+          mtu: 1500
+          ipv4:
+            enabled: true
+            dhcp: false
+            address:
+              - ip: 192.168.4.202
+                prefix-length: 24
+          ipv6:
+            enabled: false
+            dhcp: false
+            autoconf: false
+      dns-resolver:
+        config:
+          search:
+            - disconnected.ocp-poc-demo.com
+          server:
+            - 8.8.8.8
+            - 8.8.4.4
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.4.1
+            next-hop-interface: eth0
+            table-id: 254
+            
+  - hostname: host6
+    interfaces:
+      - name: eth0
+        macAddress: 52:54:00:18:10:5b
+    networkConfig:
+      interfaces:
+        - name: eth0
+          type: ethernet
+          state: up
+          mtu: 1500
+          ipv4:
+            enabled: true
+            dhcp: false
+            address:
+              - ip: 192.168.4.206
+                prefix-length: 24
+          ipv6:
+            enabled: false
+            dhcp: false
+            autoconf: false
+      dns-resolver:
+        config:
+          search:
+            - disconnected.ocp-poc-demo.com
+          server:
+            - 8.8.8.8
+            - 8.8.4.4
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.4.1
+            next-hop-interface: eth0
+            table-id: 254
