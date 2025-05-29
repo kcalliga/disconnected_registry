@@ -23,8 +23,8 @@ networking:
   - 172.30.0.0/16
 platform:
   baremetal:
-    apiVIP: "10.49.252.105"
-    ingressVIP: "10.49.252.106"
+    apiVIP: "192.168.4.60"
+    ingressVIP: "192.168.4.61"
 pullSecret: '{"auths":{"host2.ocp-poc-demo.com:8443":{"auth":"aW5pdDpPztrFNTRoMEM3b0g5WnUxR3Y4RtNJVldVTnpENlh5QQ=="}}}'
 sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDY4FFXOr3y52gyDVGeZvtf+Le3NLkllsGqJfKLWQOpHpL7AFlibK/YBlZMD5yT//ZVJ1g+AreSZpcbngvcVFdMhSL8eFSHGDAT1aZIRVdPnQ/3eNrLsLjldiR+HT191QEHl3DHY0ZyT37rl30CQ5xiUd7/5ZemiArypnxjelsaYIEnT5UcRDOAk3CDPbF8M0gNNwNAqKmRGNKcJmTgSSLjJGDblxNGMk5TIl21yxNZqJqDdQgj4s9cp0OM5ZPg1ZE9syKSqg/PkNcOZ5PVzFrOpVsVJTiSnTPlU5bmqbrwnH3ij2QdtSBh4fznchaY6z38uT8EBzXycuvaILLVVl2Qa/mITjujMVicnDYpilUeoDnd6/ZR6QZfKnCBz/T4MQ24wC2TlxXqtNSpaIbAOsNovbOvDmt5iDD1gsRGXfyrLjDAzUJKHOKWGkLbcolGjSemqzvfeDU/7iA90zUhGORmbawQcQeRHEwzIXzpL+Sby3ntrx4a/KI5STw9rCTAsPE= keith@host3.ocp-poc-demo.com'
 additionalTrustBundle: |
